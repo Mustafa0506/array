@@ -1,87 +1,89 @@
-// Задания 1 \\
-
-let cars = [
+// Отфильтровать задачи в переменные а и b
+// Сохранить количество в ключе count
+// Сохранить сами задачи в массиве-ключе arr
+let arr = [
     {
-        name: 'captiva',
-        price: 35000
+        userId: 1,
+        id: 1,
+        title: "delectus aut au`tem",
+        completed: false
     },
     {
-        name: 'malibu',
-        price: 37000
+        userId: 1,
+        id: 2,
+        title: "quis ut nam facilis et officia qui",
+        completed: false
     },
     {
-        name: 'elatra',
-        price: 36000
+        userId: 1,
+        id: 3,
+        title: "fugiat veniam minus",
+        completed: false
     },
     {
-        name: 'lada',
-        price: 15000
+        userId: 1,
+        id: 4,
+        title: "et porro tempora",
+        completed: false
     },
     {
-        name: 'matiz',
-        price: 3500
+        userId: 1,
+        id: 5,
+        title: "laboriosam mollitia et enim quasi adipisci quia provident illum",
+        completed: false
     },
     {
-        name: 'camaro',
-        price: 52000
+        erId: 1,
+        id: 6,
+        title: "qui ullam ratione quibusdam voluptatem quia omnis",
+        completed: false
     },
     {
-        name: 'tahoe',
-        price: 80000
+        userId: 1,
+        id: 7,
+        title: "illo expedita consequatur quia in",
+        completed: false
     },
     {
-        name: 'nexia',
-        price: 10000
+        userId: 1,
+        id: 8,
+        title: "quo adipisci enim quam ut ab",
+        completed: true
     },
     {
-        name: 'gentra',
-        price: 15000
-    }
+        userId: 1,
+        id: 9,
+        title: "molestiae perspiciatis ipsa",
+        completed: false
+    },
+    {
+        userId: 1,
+        id: 10,
+        title: "illo est ratione doloremque quia maiores aut",
+        completed: true
+    },
+    
 ]
+let a = {
+    count: 0,
+    arr: []
+}
 
-let cheap = []
+let b = {
+    count: 0,
+    arr: []
+}
 
-let filteredOne = cars.filter(item => {
-    if (item.price <= 35000) {
-        cheap.push(item)
+let filter = arr.filter(item => {
+    if(item.completed === true){
+        a.arr.push(item)
+        a.count++
+    }else{
+        b.arr.push(item)
+        b.count++
     }
 })
 
-console.log('Задание 1', cheap);
 
-
-
-// Задания 2 \\
-
-let arrOne = ['Aleksey', 'Kartoshka', 'Margarita', 'Morgenshtern', 'Monica']
-let index = prompt(arrOne)
-let idx = arrOne.indexOf(index)
-
-if (idx !== -1) {
-    alert(`Вы удалили ${arrOne.splice(idx, 1)}
-Остались ${arrOne}`)
-} else {
-    alert('Таких нет')
-}
-
-
-
-// Задания 3 \\
-
-let arrTwo = [1, 2, false, 'hello', 24, 'world', undefined, null, 'error', 22]
-let num = []
-
-let filteredTwo = arrTwo.filter(item => {
-    if(typeof(item) === 'number' ){
-        num.push(item)
-    }
-})
-
-console.log('Задание 3', num);
-
-if(num.length >= 5){
-    console.log('Задание 3','good');
-}else{
-    console.log('Задание 3','bad');
-}
-
+console.log(a);
+console.log(b);
