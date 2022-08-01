@@ -1,89 +1,72 @@
-// Отфильтровать задачи в переменные а и b
-// Сохранить количество в ключе count
-// Сохранить сами задачи в массиве-ключе arr
-let arr = [
-    {
-        userId: 1,
-        id: 1,
-        title: "delectus aut au`tem",
-        completed: false
+// ТЗ
+// 1. Седенить два объекта в один новый
+// 2. достать все значения в один массив и все ключи тоже в один но отдельный массив
+// 3. соеденить два массива в один целый
+// 4. отфильтровать данные по их типам данных в соответствующие переменные
+
+
+
+let user = {
+    name: 'Mustafa',
+    born: {
+        year: 2006,
+        month: 12,
+        day: 05,
+        age: 16,
     },
-    {
-        userId: 1,
-        id: 2,
-        title: "quis ut nam facilis et officia qui",
-        completed: false
+    study: {
+        school: 37,
+        extra: 'wepro'
     },
-    {
-        userId: 1,
-        id: 3,
-        title: "fugiat veniam minus",
-        completed: false
+    live: {
+        countrie: 'Uzb',
+        sity: 'Sam'
     },
-    {
-        userId: 1,
-        id: 4,
-        title: "et porro tempora",
-        completed: false
-    },
-    {
-        userId: 1,
-        id: 5,
-        title: "laboriosam mollitia et enim quasi adipisci quia provident illum",
-        completed: false
-    },
-    {
-        erId: 1,
-        id: 6,
-        title: "qui ullam ratione quibusdam voluptatem quia omnis",
-        completed: false
-    },
-    {
-        userId: 1,
-        id: 7,
-        title: "illo expedita consequatur quia in",
-        completed: false
-    },
-    {
-        userId: 1,
-        id: 8,
-        title: "quo adipisci enim quam ut ab",
-        completed: true
-    },
-    {
-        userId: 1,
-        id: 9,
-        title: "molestiae perspiciatis ipsa",
-        completed: false
-    },
-    {
-        userId: 1,
-        id: 10,
-        title: "illo est ratione doloremque quia maiores aut",
-        completed: true
-    },
-    
-]
-let a = {
-    count: 0,
-    arr: []
+    isMarried: false,
 }
 
-let b = {
-    count: 0,
-    arr: []
+let pasport = {
+    id: 'AC',
+    number: 1930434
 }
 
-let filter = arr.filter(item => {
-    if(item.completed === true){
-        a.arr.push(item)
-        a.count++
-    }else{
-        b.arr.push(item)
-        b.count++
+let types = {
+    number: [],
+    string: [],
+    object: [],
+    boolean: []
+}
+
+// 1
+let newUser = Object.assign(user, pasport)
+
+// 2
+
+let keys = Object.keys(user)
+let value = Object.values(user)
+
+// 3
+
+let add = keys.concat(value)
+
+// 4
+
+let filtered = add.filter(item => {
+    if (typeof (item) === 'number') {
+        types.number.push(item)
+    } else if (typeof (item) === 'string') {
+        types.string.push(item)
+    } else if (typeof (item) === 'object') {
+        types.object.push(item)
+    } else if (typeof (item) === 'boolean') {
+        types.boolean.push(item)
     }
 })
 
 
-console.log(a);
-console.log(b);
+
+console.log('Задание 1', newUser);
+console.log('Задание 2', keys);
+console.log('Задание 2', value);
+console.log('Задание 3', add);
+console.log('Задание 4', types);
